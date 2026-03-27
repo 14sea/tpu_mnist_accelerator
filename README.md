@@ -53,4 +53,6 @@ python3 cnn/model/train_cnn.py --epochs 20
 ## Notes
 
 - Keep generated Quartus reports and bitstreams out of source control.
-- If sharing prebuilt bitstreams, publish them in Releases with matching commit tags.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2026
+ *
+ * Licensed under the MIT License.
+ * See LICENSE file in the project root for full license information.
+ */
+
 // Single-port synchronous RAM — infers to M9K block RAM on Cyclone IV
 // Read-during-write returns old data.
 

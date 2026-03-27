@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2026
+ *
+ * Licensed under the MIT License.
+ * See LICENSE file in the project root for full license information.
+ */
+
 // TPU Demo Top Level — AX301 (EP4CE6F17C8)
 // 50MHz clock, UART 115200 baud, 4×4 systolic array
 

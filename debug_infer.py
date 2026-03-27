@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+#
+# Copyright (c) 2026
+#
+# Licensed under the MIT License.
+# See LICENSE file in the project root for full license information.
+#
+
 """Debug: compare FPGA vs Python layer-by-layer for a single sample."""
 import json, os, struct, sys, time
 import numpy as np

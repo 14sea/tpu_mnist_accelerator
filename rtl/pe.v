@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2026
+ *
+ * Licensed under the MIT License.
+ * See LICENSE file in the project root for full license information.
+ */
+
 // Processing Element for weight-stationary systolic array
 // - Weight is loaded and stays fixed
 // - Activation (x) flows top-to-bottom

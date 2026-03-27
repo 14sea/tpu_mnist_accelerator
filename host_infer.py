@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+#
+# Copyright (c) 2026
+#
+# Licensed under the MIT License.
+# See LICENSE file in the project root for full license information.
+#
+
 """
 Host-side UART inference script for TPU Demo.
 Sends MNIST images to FPGA, receives classification results.

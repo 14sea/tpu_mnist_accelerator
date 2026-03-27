@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+#
+# Copyright (c) 2026
+#
+# Licensed under the MIT License.
+# See LICENSE file in the project root for full license information.
+#
+
 """
 Bit-accurate Python simulation of the FPGA inference engine.
 Matches the hardware's integer arithmetic exactly:

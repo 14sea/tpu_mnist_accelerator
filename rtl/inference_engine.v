@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2026
+ *
+ * Licensed under the MIT License.
+ * See LICENSE file in the project root for full license information.
+ */
+
 // Inference Engine — orchestrates layer-by-layer MLP computation
 //
 // Uses M9K block RAMs for input/output buffers (not registers) to fit in EP4CE6.

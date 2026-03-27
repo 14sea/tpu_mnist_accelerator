@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2026
+ *
+ * Licensed under the MIT License.
+ * See LICENSE file in the project root for full license information.
+ */
+
 // UART Receiver - 115200 baud, 8N1, 50MHz clock
 // Oversamples at 16x baud rate, samples at midpoint of each bit.
 
