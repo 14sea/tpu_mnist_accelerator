@@ -1,0 +1,36 @@
+# Quartus generated files
+/quartus/db/
+/quartus/incremental_db/
+/quartus/*.sof
+/quartus/*.done
+/quartus/*.jdi
+/quartus/*.pin
+/quartus/*.sld
+/quartus/*.smsg
+/quartus/*.rpt
+/quartus/*.summary
+
+# Top-level generated bitstreams
+/*.rbf
+
+# Simulation outputs
+/sim/**/*.vcd
+/sim/**/*.vvp
+/sim/**/*.fst
+/sim/**/*.log
+
+# Python virtual env and caches
+.venv/
+venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# ML caches and notebooks
+.ipynb_checkpoints/
+
+# Editor and OS
+.vscode/
+.idea/
+*.swp
+.DS_Store

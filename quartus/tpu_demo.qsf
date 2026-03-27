@@ -1,0 +1,48 @@
+# Quartus Settings for TPU Demo — AX301 (EP4CE6F17C8)
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE6F17C8
+set_global_assignment -name TOP_LEVEL_ENTITY tpu_top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "2026-03-22"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
+
+# RTL source files
+set_global_assignment -name VERILOG_FILE ../rtl/tpu_top.v
+set_global_assignment -name VERILOG_FILE ../rtl/pe.v
+set_global_assignment -name VERILOG_FILE ../rtl/systolic_array_4x4.v
+set_global_assignment -name VERILOG_FILE ../rtl/uart_rx.v
+set_global_assignment -name VERILOG_FILE ../rtl/uart_tx.v
+set_global_assignment -name VERILOG_FILE ../rtl/inference_engine.v
+set_global_assignment -name VERILOG_FILE ../rtl/sp_ram.v
+
+# Clock
+set_global_assignment -name SDC_FILE tpu_demo.sdc
+
+# Pin assignments (AX301 board)
+set_location_assignment PIN_E1  -to CLOCK
+set_location_assignment PIN_E15 -to RESET
+set_location_assignment PIN_M2  -to RXD
+set_location_assignment PIN_G1  -to TXD
+set_location_assignment PIN_G15 -to LED[0]
+set_location_assignment PIN_F16 -to LED[1]
+set_location_assignment PIN_F15 -to LED[2]
+set_location_assignment PIN_D16 -to LED[3]
+
+# I/O standard
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+
+# Disable dual-purpose pins used as GPIO
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+
+# Unused pins
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
+
+# Force PE multiplies to logic (16 PEs exceed 15 DSP blocks)
+set_instance_assignment -name DSP_BLOCK_BALANCING "LOGIC ELEMENTS" -to "systolic_array_4x4:u_sa|pe:*"
+
+# Timing / optimization
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name OPTIMIZATION_MODE "HIGH PERFORMANCE EFFORT"

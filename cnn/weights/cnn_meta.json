@@ -1,0 +1,101 @@
+{
+  "description": "INT8 CNN for MNIST. Conv layers run on host via im2col; FC layers run on FPGA via existing UART protocol.",
+  "float_accuracy": 0.9861,
+  "quantized_accuracy_500": 0.992,
+  "conv_info": [
+    {
+      "kH": 5,
+      "kW": 5,
+      "stride": 1,
+      "pad": 0,
+      "in_channels": 1,
+      "out_channels": 4,
+      "in_h": 28,
+      "in_w": 28,
+      "out_h": 24,
+      "out_w": 24,
+      "pool": 2,
+      "out_h_pool": 12,
+      "out_w_pool": 12
+    },
+    {
+      "kH": 3,
+      "kW": 3,
+      "stride": 1,
+      "pad": 0,
+      "in_channels": 4,
+      "out_channels": 8,
+      "in_h": 12,
+      "in_w": 12,
+      "out_h": 10,
+      "out_w": 10,
+      "pool": 2,
+      "out_h_pool": 5,
+      "out_w_pool": 5
+    }
+  ],
+  "layers": [
+    {
+      "name": "conv0",
+      "type": "conv",
+      "activation": "relu",
+      "w_scale": 0.006815121243799366,
+      "x_scale": 0.007874015748031496,
+      "out_scale": 0.040312188196043486,
+      "requant_scale": 0.0013311699116270498,
+      "requant_mult": 87,
+      "w_file": "conv0_weights.bin",
+      "b_file": "conv0_bias.bin",
+      "out_channels": 4,
+      "in_channels": 1,
+      "kernel_h": 5,
+      "kernel_w": 5,
+      "patch_size": 25
+    },
+    {
+      "name": "conv1",
+      "type": "conv",
+      "activation": "relu",
+      "w_scale": 0.007552201740172277,
+      "x_scale": 0.040312188196043486,
+      "out_scale": 0.07820531114462072,
+      "requant_scale": 0.0038929041185107923,
+      "requant_mult": 255,
+      "w_file": "conv1_weights.bin",
+      "b_file": "conv1_bias.bin",
+      "out_channels": 8,
+      "in_channels": 4,
+      "kernel_h": 3,
+      "kernel_w": 3,
+      "patch_size": 36
+    },
+    {
+      "name": "fc0",
+      "type": "fc",
+      "activation": "relu",
+      "w_scale": 0.004032762059993669,
+      "x_scale": 0.07820531114462072,
+      "out_scale": 0.1758101426591317,
+      "requant_scale": 0.0017938863304690304,
+      "requant_mult": 118,
+      "w_file": "fc0_weights.bin",
+      "b_file": "fc0_bias.bin",
+      "in_features": 200,
+      "out_features": 64
+    },
+    {
+      "name": "fc1",
+      "type": "fc",
+      "activation": "none",
+      "w_scale": 0.005797729736926595,
+      "x_scale": 0.1758101426591317,
+      "out_scale": 1.0,
+      "requant_scale": 0.0,
+      "requant_mult": 0,
+      "w_file": "fc1_weights.bin",
+      "b_file": "fc1_bias.bin",
+      "in_features": 64,
+      "out_features": 10
+    }
+  ]
+}

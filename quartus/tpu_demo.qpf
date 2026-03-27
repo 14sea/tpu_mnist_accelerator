@@ -1,0 +1,4 @@
+QUARTUS_VERSION = "21.1"
+DATE = "2026-03-22"
+
+PROJECT_REVISION = "tpu_demo"

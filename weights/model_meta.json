@@ -1,0 +1,46 @@
+{
+  "layers": [
+    {
+      "index": 0,
+      "in_features": 784,
+      "out_features": 128,
+      "w_scale": 0.006513931322842836,
+      "x_scale": 0.007874015718698502,
+      "out_scale": 0.0658423900604248,
+      "requant_scale": 0.0007789935334585607,
+      "w_file": "layer0_weights.bin",
+      "b_file": "layer0_bias.bin",
+      "w_bytes": 100352,
+      "b_bytes": 512,
+      "activation": "relu"
+    },
+    {
+      "index": 1,
+      "in_features": 128,
+      "out_features": 64,
+      "w_scale": 0.007729464676231146,
+      "x_scale": 0.0658423900604248,
+      "out_scale": 0.16103805601596832,
+      "requant_scale": 0.0031602864619344473,
+      "w_file": "layer1_weights.bin",
+      "b_file": "layer1_bias.bin",
+      "w_bytes": 8192,
+      "b_bytes": 256,
+      "activation": "relu"
+    },
+    {
+      "index": 2,
+      "in_features": 64,
+      "out_features": 10,
+      "w_scale": 0.008752776309847832,
+      "x_scale": 0.16103805601596832,
+      "out_scale": 1.0,
+      "requant_scale": 0.0014095300575718284,
+      "w_file": "layer2_weights.bin",
+      "b_file": "layer2_bias.bin",
+      "w_bytes": 640,
+      "b_bytes": 40,
+      "activation": "none"
+    }
+  ]
+}
